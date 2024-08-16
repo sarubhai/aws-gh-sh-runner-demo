@@ -23,7 +23,6 @@ jobs:
           registries: ${{ secrets.AWS_ACCOUNT_ID }}
 
       - name: Build and Push Docker image to Amazon ECR
-        working-directory: code-repo
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ${{ secrets.ECR_REPO_NAME }}
